@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Category from "./admin/category/Category";
+import DisplayAllCategory from "./admin/category/DisplayAllCategory";
+import SubCategory from "./admin/subcategory/SubCategory";
+import DisplayAllSubCategory from "./admin/subcategory/DisplayAllSubCategory";
+import Company from"./admin/companies/Company";
+import DisplayAllCompany from "./admin/companies/DisplayAllCompany";
 
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Routes>
+          <Route element={<Category/>} path="/category"/>
+          <Route element={<DisplayAllCategory/>} path="/displayallcategory"/>
+          <Route element={<SubCategory/>} path="/subcategory"/>
+          <Route element={<DisplayAllSubCategory/>} path="/displayallsubcategory"/>
+          <Route element={<Company/>} path="/company"/>
+          <Route element={<DisplayAllCompany/>} path="/displayallcompany"/>
+          
+       </Routes>
+      </Router>
+    
     </div>
   );
 }
